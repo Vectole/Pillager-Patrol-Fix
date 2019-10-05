@@ -1,0 +1,5 @@
+main: xyz.vectole.projects.pillagerfix.Main
+name: PillagerFix
+version: 1.0.0
+api-version: 1.14
+description: Plugin that periodically removes pillagers from the world.
