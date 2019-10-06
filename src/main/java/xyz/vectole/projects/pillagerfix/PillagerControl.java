@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler;
 
 public class PillagerControl implements Listener {
     @EventHandler
+    /// Each time a pillager spawns as a part of a patrol, if a patrol leader (banner pillager) is within 2 view distances (1 player view distance diameter), the spawn gets cancelled.
     public void onPillagerSpawn(CreatureSpawnEvent event) {
         if(event.getSpawnReason() == SpawnReason.PATROL) {
             Location location = event.getLocation();
@@ -19,6 +20,7 @@ public class PillagerControl implements Listener {
                         if(entity.getLocation().distance(location) <= location.getWorld().getViewDistance()*2) {
                             System.out.println("A pillager spawn has been cancelled!");
                             event.setCancelled(true);
+                            return;
                         }
                     }
                 }
